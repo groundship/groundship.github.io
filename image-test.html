@@ -1,0 +1,75 @@
+<html>
+
+<style>
+@font-face {
+    font-family: 'delta';
+    src: url('delta.ttf');
+    
+  
+  
+body {
+  background: black;
+}
+
+}
+
+img {
+  border-radius: 15px;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: black;
+  border-radius: 15px;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 100px;
+  font-family: delta;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+
+</style>
+
+<body>
+<style="background-color:black;">
+<!--<img src="https://deltarune.com/assets/images/key-art.png" alt="image">-->
+<div class="container">
+  <img src="https://www.familiengarten-eberswalde.de/wp-content/uploads/2024/06/551515-960x780.jpeg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">deltarune</div>
+    <img src="https://deltarune.com/assets/images/key-art.gif" alt="Avatar" class="image">
+  </div>
+</div>
+</body>
+</html>
