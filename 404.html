@@ -1,4 +1,4 @@
-<html>
+<!--<html>
 <style>
   @font-face {
     font-family: 'undertale1';
@@ -36,6 +36,109 @@
     <img src="https://deltarune.com/assets/images/dog-sleep.gif" alt="dog deltarune">
   </div>
 </body>
+</html>-->
+
+
+
+<html lang='en'>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+  <meta charset='utf-8'>
+  <meta content='width=device-width' name='viewport'>
+  <meta content='#000000' name='theme-color'>
+  <meta content='noindex' name='robots'>
+  <title>room_dogcheck</title>
+  <link href='/assets/css/extra.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <main>
+    <script crossorigin='anonymous' integrity='sha512-yBpuflZmP5lwMzZ03hiCLzA94N0K2vgBtJgqQ2E1meJzmIBfjbb7k4Y23k2i2c/rIeSUGc7jojyIY5waK3ZxCQ==' referrerpolicy='no-referrer' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.slim.min.js'></script>
+    <script crossorigin='anonymous' integrity='sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==' referrerpolicy='no-referrer' src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js'></script>
+
+    <div id='center'>
+<div class='dog' id='dog_sleep'>
+<img alt='Sleeping dog' class='dog1' src='/assets/images/dog-sleep.png'>
+<img alt='Sleeping dog' class='dog2' src='/assets/images/dog-sleep.gif'>
+</div>
+<div class='dog hidden' id='dog_maraca'>
+<img alt='Maraca dog' class='dog1' src='/assets/images/dog-maraca.png'>
+<img alt='Maraca dog' class='dog2' src='/assets/images/dog-maraca.gif'>
+</div>
+</div>
+<style>
+  .dog {
+    min-width: 320px;
+    max-width: 100%;
+    min-height: 320px;
+    max-height: 100%;
+    position: relative;
+    color: black;
+    cursor: pointer;
+  }
+  .dog img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+  }
+  .dog2 {
+    opacity: 0;
+  }
+</style>
+<script>
+  var maraca = false;
+  
+  var results = new Howl({
+    src: ['/assets/audio/results.ogg', '/assets/audio/results.mp3'],
+    volume: 0.5,
+    loop: true
+  });
+  
+  var baci = new Howl({
+    src: ['/assets/audio/baci_perugina2.ogg', '/assets/audio/baci_perugina2.mp3'],
+    volume: 0.5,
+    loop: true
+  });
+  
+  $(function() {
+    var r = Math.random();
+    if (Math.random() >= 0.95) {
+      $('#dog_sleep').addClass('hidden');
+      $('#dog_maraca').removeClass('hidden');
+      maraca = true;
+    }
+  });
+  
+  $(document).on('click', '.dog:not(.playing)', function() {
+    if (maraca) {
+      baci.play();
+    } else {
+      results.play();
+    }
+    $('.dog').addClass('playing');
+    $('.dog1').css('opacity', 0);
+    $('.dog2').css('opacity', 1);
+  });
+  
+  $(document).on('click', '.dog.playing', function() {
+    if (maraca) {
+      baci.pause();
+    } else {
+      results.pause();
+    }
+    $('.dog').removeClass('playing');
+    $('.dog1').css('opacity', 1);
+    $('.dog2').css('opacity', 0);
+  });
+</script>
+
+  </main>
+  <script defer>if(!window.plausibleloaded){window.plausibleloaded=true;var onloadfunc = function() {!function(){"use strict";var t=window.location,e=window.document;function a(t,e){t&&console.warn("Ignoring Event: "+t),e&&e.callback&&e.callback()}function n(n,i){if(/^localhost$|^127(\.[0-9]+){0,2}\.[0-9]+$|^\[::1?\]$/.test(t.hostname)||"file:"===t.protocol)return a("localhost",i);if(window._phantom||window.__nightmare||window.navigator.webdriver||window.Cypress)return a(null,i);try{if("true"===window.localStorage.plausible_ignore)return a("localStorage flag",i)}catch(r){}var l={},o=(l.n=n,l.u=t.href,l.d="deltarune.com",l.r=e.referrer||null,i&&i.meta&&(l.m=JSON.stringify(i.meta)),i&&i.props&&(l.p=i.props),new XMLHttpRequest);o.open("POST","https://plausible.fangamer.eu/api/event",!0),o.setRequestHeader("Content-Type","text/plain"),o.send(JSON.stringify(l)),o.onreadystatechange=function(){4===o.readyState&&i&&i.callback&&i.callback()}}e.currentScript;var i=window.plausible&&window.plausible.q||[];window.plausible=n;for(var r,l=0;l<i.length;l++)n.apply(this,i[l]);function o(){r!==t.pathname&&(r=t.pathname,n("pageview"))};o();}();}; onloadfunc();}</script>
+  
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"950aa6b11ca4a16d","version":"2025.6.2","r":1,"token":"377f50f2716b474ea394c9bbd3aaef87","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+</body>
 </html>
+
 
 
